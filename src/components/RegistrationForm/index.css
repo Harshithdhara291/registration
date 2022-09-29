@@ -1,0 +1,27 @@
+/* Write your CSS code here */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.head {
+  color: #ea580c;
+}
+.button {
+  color: white;
+  background-color: #ea580c;
+  border-radius: 5px;
+  border: 0px;
+  padding: 8px;
+}
+.para {
+  color: red;
+}
