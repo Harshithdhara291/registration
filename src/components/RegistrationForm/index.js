@@ -36,17 +36,27 @@ class RegistrationForm extends Component {
     const {firstName, lastName} = this.state
     if (firstName !== '' && lastName !== '') {
       this.setState({isSubmitted: true, firstName: '', lastName: ''})
-    } else {
-      this.setState({blurFN: 'Required', blurLN: 'Required'})
+    }
+    if (firstName === '') {
+      this.setState({blurFN: 'Required'})
+    }
+    if (lastName === '') {
+      this.setState({blurLN: 'Required'})
     }
   }
 
   onChangeFirstName = event => {
     this.setState({firstName: event.target.value})
+    if (event.target.value !== '') {
+      this.setState({blurFN: ''})
+    }
   }
 
   onChangeLastName = event => {
     this.setState({lastName: event.target.value})
+    if (event.target.value !== '') {
+      this.setState({blurLN: ''})
+    }
   }
 
   renderLastNameField = () => {
@@ -79,7 +89,7 @@ class RegistrationForm extends Component {
         </label>
         <input
           type="text"
-          id="FirstName"
+          id="firstName"
           className="input-filed"
           value={firstName}
           onChange={this.onChangeFirstName}
